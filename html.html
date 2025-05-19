@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>ַ־Êַָׁ ״ׁÞ ַבÊֿׁם׃ ַבװַדב</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      direction: rtr;
+      background-color: #f9f9f9;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+    }
+    .question {
+      margin-bottom: 20px;
+      background-color: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question p {
+      font-weight: bold;
+      color: #2c3e50;
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .passed {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .failed {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .details {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .correct-answer {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .wrong-answer {
+      color: #dc3545;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>ַ־Êַָׁ ״ׁÞ ַבÊֿׁם׃ ַבװַדב</h2>
+
+  <form id="quizForm">
+    
+    <!-- ֳ׃ֶבֹ ַ־Êםַׁ דה דÊÚֿֿ (1-16) -->
+    <div class="question">
+      <p>1. ום דּדזÚֹ ַבדÚַׁÝ זַבÞַֿׁÊ זַבדֶַָֿ ַבÊם םֽדבוַ זםִדה ָוַ זםזÙÝוַ:</p>
+      <label><input type="radio" name="q1" value="0"> ÝַÚבםֹ ַבדÊÚבד</label>
+      <label><input type="radio" name="q1" value="1"> ÝַÚבםֹ ַבדÚבד</label>
+      <label><input type="radio" name="q1" value="0"> Þֹֿׁ ַבדÊÚבד</label>
+      <label><input type="radio" name="q1" value="0"> Þֹֿׁ ַבדÚבד</label>
+    </div>
+
+    <div class="question">
+      <p>2. Êֽבםב ַבדֽÊזל םװדב Úֹֿ דַֽׁב דהוַ:</p>
+      <label><input type="radio" name="q2" value="0"> ַבÊ׃ב׃ב דה ַבÚַד ֵבל ַב־ַױ</label>
+      <label><input type="radio" name="q2" value="0"> דה ַבדֳבזÝ ֵבל Ûםׁ ַבדֳבזÝ</label>
+      <label><input type="radio" name="q2" value="0"> דה ַב׃וב ֵבל ַבױÚָ</label>
+      <label><input type="radio" name="q2" value="1"> ַבÊÚׁÝ ֵבל דßזהַÊו</label>
+    </div>
+
+    <div class="question">
+      <p>3. דַ וז ַבָץÚֿ ַבֳזב דה ֳָÚַֿ ַבÊֿׁם׃ ַבÝÚרַב¿</p>
+      <label><input type="radio" name="q3" value="0"> Ê״זםׁ Úזַ״Ý ֵםַָּםֹ Úהֿ ַבÊבַדם׀</label>
+      <label><input type="radio" name="q3" value="1"> זײזֽ ַבַÊױַב ַבßבַדם דÚ ַבדÊÚבדםה</label>
+      <label><input type="radio" name="q3" value="0"> Êּהָ ֵַֹֻׁ ַבÚזַ״Ý ַב׃בָםֹ Úהֿ ַבÊבַדם׀</label>
+      <label><input type="radio" name="q3" value="0"> ֵַָֹֻ ֱֳַֿ ַבÊבַדם׀ ַבּםֿ</label>
+    </div>
+
+    <div class="question">
+      <p>4. דה ַבדוַַׁÊ ַבבַׂד ÊזַÝׁוַ בֿל ַבדÚבד בÊֽÞםÞ ַבÊÝַÚב ַֿ־ב ַבדזÞÝ ַבÊÚבםדם:</p>
+      <label><input type="radio" name="q4" value="0"> הד״ ַבÊÝַÚב ַב־״ם</label>
+      <label><input type="radio" name="q4" value="0"> הד״ ַבÊÝַÚב ַָÊַּוםה</label>
+      <label><input type="radio" name="q4" value="0"> הד״ ַבַÊױַב ַבהװ״</label>
+      <label><input type="radio" name="q4" value="1"> דוַֹׁ ַ׃Êַֹֻׁ ַבַֿÝÚםֹ</label>
+    </div>
+
+    <div class="question">
+      <p>5. דה ַבדוַַׁÊ ַבÊם םָּ Úבל ַבדÚבד דַׁÚַÊוַ בםÊדßה דה דוַֹׁ ױםַÛֹ ַבֳ׃ֶבֹ:</p>
+      <label><input type="radio" name="q5" value="1"> ֳה Êßזה ױםÛֹ ַבֳ׃ֶבֹ זַײֹֽ</label>
+      <label><input type="radio" name="q5" value="0"> ֳה םßזה ַב׃ִַב דÊײדהַנ הÝםַנ ֳז הÝם ַבהÝם</label>
+      <label><input type="radio" name="q5" value="0"> ּ׀ָ ַהÊַָו ַבÊבַדם׀</label>
+      <label><input type="radio" name="q5" value="0"> ֳה םׁßׂ ַבדÚבד Úבל ַבֳ׃ֶבֹ ַבÛַדײֹ</label>
+    </div>
+
+    <div class="question">
+      <p>6. םÞזד ַבÊֿׁם׃ ַבÝÚרַב Úבל ָץÚֿםה ודַ:</p>
+      <label><input type="radio" name="q6" value="0"> ַבֵַֹֻׁ ַבÝßׁםֹ זַבÊֽױםב</label>
+      <label><input type="radio" name="q6" value="1"> ַבֵַֹֻׁ ַבÝßׁםֹ זַבױבֹ ַבֵםַָּםֹ ָםה ַבדֿׁ׃ זַבÊבַדם׀</label>
+      <label><input type="radio" name="q6" value="0"> ַבÊֽױםב זַבױבֹ ַבֵםַָּםֹ ָםה ַבדֿׁ׃ זַבÊבַדם׀</label>
+      <label><input type="radio" name="q6" value="0"> ּדםÚ דַ ׃ָÞ</label>
+    </div>
+
+    <div class="question">
+      <p>7. ֳםר דדַ םבם בם׃ דה ֳהזַÚ ַבָׁדּםַÊ ַבÊÚבםדםֹ¿</p>
+      <label><input type="radio" name="q7" value="0"> ַבÊÚבםד ַב־ַױ</label>
+      <label><input type="radio" name="q7" value="0"> ַבֳבÚַָ ַבÊָׁזםֹ</label>
+      <label><input type="radio" name="q7" value="0"> ֽב ַבדװßבַÊ</label>
+      <label><input type="radio" name="q7" value="1"> בַ װםֱ דדַ ׃ָÞ</label>
+    </div>
+
+    <div class="question">
+      <p>8. םÊײדה ַבדזÞÝ ַבÊÚבםדם ַּהָםה ודַ:</p>
+      <label><input type="radio" name="q8" value="0"> ַבדÚבד זַבדÊÚבד</label>
+      <label><input type="radio" name="q8" value="1"> ײָ״ ַבÊÚבד זדֻםַׁÊ ַבÊÚבד</label>
+      <label><input type="radio" name="q8" value="0"> ַבֳהװ״ֹ זַבֳֿזַÊ</label>
+      <label><input type="radio" name="q8" value="0"> ַבֳוַֿÝ Þױםֹׁ זָÚםֹֿ ַבדֿל</label>
+    </div>
+
+    <div class="question">
+      <p>9. ֳםר דדַ םבם בם׃Ê דה ֳהדַ״ ַבÊÝַÚב ַֿ־ב ַבדזÞÝ ַבÊÚבםדם¿</p>
+      <label><input type="radio" name="q9" value="1"> הד״ ַבַÊױַב ַבדÞםרֿ</label>
+      <label><input type="radio" name="q9" value="0"> הד״ ַבַÊױַב ַָÊַּוםה</label>
+      <label><input type="radio" name="q9" value="0"> הד״ ַבַÊױַב ַבהװ״</label>
+      <label><input type="radio" name="q9" value="0"> הד״ ַבÊÝַÚב ַב־״ם</label>
+    </div>
+
+    <div class="question">
+      <p>10. םÞױֿ ַָבײָ״ ַבַֿ־בם Ýם ַבÊÚבד:</p>
+      <label><input type="radio" name="q10" value="0"> Êֽֿםֿ ַבװׁז״ ַב־ַּׁםֹ ַבÊם Ê׃ורב ֳז ÊÚםÞ ַבÊÚבםד</label>
+      <label><input type="radio" name="q10" value="0"> ÊÞֿםד ָÚײ ַבÚהַױׁ ַבדׁÊָ״ֹ ָדזײזÚ ַבÊÚבד</label>
+      <label><input type="radio" name="q10" value="1"> םֻֽֿ ָזַ׃״ֹ ַבדÊÚבד זםÊײדה ַ־Êַָׁ ֳה׃ָ ַבÙׁזÝ בÊֽÞםÞ ַבÊÚבד</label>
+      <label><input type="radio" name="q10" value="0"> Êװ־םױ דױַֿׁ ַבדװßבַÊ</label>
+    </div>
+
+    <div class="question">
+      <p>11. ֳם דדַ םבם בם׃ דה ַבÚהַױׁ ַבֳ׃ַ׃םֹ בבדזÞÝ ַבÊÚבםדם¿</p>
+      <label><input type="radio" name="q11" value="1"> ַב־״ֹ ַבַֿׁ׃םֹ</label>
+      <label><input type="radio" name="q11" value="0"> ַבֳוַֿÝ ַבÊÚבםדםֹ</label>
+      <label><input type="radio" name="q11" value="0"> ַבדֽÊזל ַבÊÚבםדם</label>
+      <label><input type="radio" name="q11" value="0"> ַבÊÞזםד</label>
+    </div>
+
+    <div class="question">
+      <p>12. ֵֽֿל דַֽׁב Êֽבםב ַבדֽÊזל ַבÊÚבםדם:</p>
+      <label><input type="radio" name="q12" value="0"> ÊׁÊםָ ַבֳהװ״ֹ ַבÊÚבםדםֹ</label>
+      <label><input type="radio" name="q12" value="0"> ַ־Êםַׁ ״ֶַׁÞ ַבÊÚבד</label>
+      <label><input type="radio" name="q12" value="0"> Êֽֿםֿ ז׃ֶַב ַבÚׁײ</label>
+      <label><input type="radio" name="q12" value="1"> ַבַה־ַׁ״ ַבÝÚבם Ýם Êֽבםב ַבדֽÊזל זדזײזÚַÊו</label>
+    </div>
+
+    <div class="question">
+      <p>13. דַ וז הד״ ַבÊÝַÚב ַב׀ם םÊדםׂ ָÊÝַÚב ַב״בָֹ דÚ ָÚײוד ַבָÚײ ַָבֵײַÝֹ ֵבל ַבÊÝַÚב דÚ ַבדÚבד¿</p>
+      <label><input type="radio" name="q13" value="0"> הד״ ַבÊÝַÚב ַב־״ם</label>
+      <label><input type="radio" name="q13" value="0"> הד״ ַבÊÝַÚב ַָÊַּוםה</label>
+      <label><input type="radio" name="q13" value="1"> הד״ ַבÊÝַÚב ַבֻבַֻם</label>
+      <label><input type="radio" name="q13" value="0"> הד״ ַבַÊױַב ַבהװ״</label>
+    </div>
+
+    <div class="question">
+      <p>14. ום דֿל דַ ֳֽׁׂו ַב״בָֹ דה ÊÞֿד הֽז ÊֽÞםÞ ַבֳוַֿÝ:</p>
+      <label><input type="radio" name="q14" value="1"> ÝַÚבםֹ ַבדÚבד</label>
+      <label><input type="radio" name="q14" value="0"> ÝַÚבםֹ ַבדÊÚבד</label>
+      <label><input type="radio" name="q14" value="0"> Þֹֿׁ ַבדÊÚבד</label>
+      <label><input type="radio" name="q14" value="0"> Þֹֿׁ ַבדÚבד</label>
+    </div>
+
+    <div class="question">
+      <p>15. Úַָֹׁ Úה ָהֱַ םװדב Úהַױׁ ַבױזÊ זַבױזֹׁ זַבֽׁßֹ זַבדֽÊזל ַבÊÚבםדם זַבÊם םÊÝַÚב דÚוַ ַבדÊÚבד:</p>
+      <label><input type="radio" name="q15" value="0"> ַבז׃םבֹ ַבÊÚבםדםֹ</label>
+      <label><input type="radio" name="q15" value="0"> ַבָׁהַדּ ַבÊÚבםדם</label>
+      <label><input type="radio" name="q15" value="1"> ַבָׁדּםֹ ַבÊÚבםדםֹ</label>
+      <label><input type="radio" name="q15" value="0"> ַבהÙַד ַבÊÚבםדם</label>
+    </div>
+
+    <div class="question">
+      <p>16. Ýם ָׁדּםַÊ ַבÊדׁםה זַבדדַׁ׃ֹ םßזה ַבַֽ׃ָ ַבֲבם:</p>
+      <label><input type="radio" name="q16" value="1"> ßֳַֹֿ ד׃ַÚֹֿ</label>
+      <label><input type="radio" name="q16" value="0"> ßָֿםב Úה ַבדÚבד</label>
+      <label><input type="radio" name="q16" value="0"> ßַָׁדּ Úבַּםֹ</label>
+      <label><input type="radio" name="q16" value="0"> ßדֿםׁ בבÊÚבד</label>
+    </div>
+
+    <!-- ֳ׃ֶבֹ ױֽ/Ûב״ (17-32) -->
+    <div class="question">
+      <p>17. םÊײדה ַבדזÞÝ ַבÊÚבםדם ַּהָ זַֽֿ ÝÞ״ וז ײָ״ ַבÊÚבד</p>
+      <label><input type="radio" name="q17" value="0"> ױֽ</label>
+      <label><input type="radio" name="q17" value="1"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>18. דה ־ױֶַױ ַבÊÚבד ַבÝÚרַב ֳה םßזה דהַ׃ַָנ בבדÊÚבד דה ֽםֻ ַבזÞÊ זַבּוֿ</p>
+      <label><input type="radio" name="q18" value="1"> ױֽ</label>
+      <label><input type="radio" name="q18" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>19. דה ַבדוד בבדÚבד ַדÊבַß דוַֹׁ ַ׃Êַֹֻׁ ַבַֿÝÚםֹ</p>
+      <label><input type="radio" name="q19" value="1"> ױֽ</label>
+      <label><input type="radio" name="q19" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>20. Úהֿ Êױדםד ַבַָׁדּ ַבÊÚבםדםֹ בַ םהָÛם ַ׃Ê־ַֿד ַבבזה בבÊׁßםׂ</p>
+      <label><input type="radio" name="q20" value="0"> ױֽ</label>
+      <label><input type="radio" name="q20" value="1"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>21. םדßה ַבÊÛבָ Úבל דװßבֹ ַבÝׁזÞ ַבÝֿׁםֹ דה ־בַב ÊהזÚ ַבדֻםַׁÊ</p>
+      <label><input type="radio" name="q21" value="1"> ױֽ</label>
+      <label><input type="radio" name="q21" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>22. ÊהÙםד ַבדֽÊזל וז ֳ׃בזָ םÚדב Úבל Êֽֿםֿ ַבדודַÊ ַבÝׁÚםֹ</p>
+      <label><input type="radio" name="q22" value="0"> ױֽ</label>
+      <label><input type="radio" name="q22" value="1"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>23. םץÚׁרÝ ַבדֻםׁ זÙםÝםַנ ֳָהו ÊÛםםׁ Ýם הװַ״ ַבßֶַה ַבֽם</p>
+      <label><input type="radio" name="q23" value="0"> ױֽ</label>
+      <label><input type="radio" name="q23" value="1"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>24. םָּ ֳה Êßזה ַבהזַÊּ Ýם ַבדזַÞÝ ַבÊÚבםדםֹ װַדבֹ ז׃בזßםֹ</p>
+      <label><input type="radio" name="q24" value="1"> ױֽ</label>
+      <label><input type="radio" name="q24" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>25. ַבדֻםׁ זÙםÝםַנ וז ֻֽֿ םִֿם ֵבל ֽֿזֻ ַב׃בזß</p>
+      <label><input type="radio" name="q25" value="1"> ױֽ</label>
+      <label><input type="radio" name="q25" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>26. םÊßזה ַבדזÞÝ ַבÊÚבםדם דה ֳָׁÚֹ Úהַױׁ ֳ׃ַ׃םֹ</p>
+      <label><input type="radio" name="q26" value="1"> ױֽ</label>
+      <label><input type="radio" name="q26" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>27. בַ םִֿם ַבÊÚׂםׂ ֶַֿדַנ ֵבל ַבהÊֶַּ ַבדÊזÞÚֹ</p>
+      <label><input type="radio" name="q27" value="1"> ױֽ</label>
+      <label><input type="radio" name="q27" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>28. ÊÚֿ ַבÝׁזÞ ַבÝֿׁםֹ ׁßםֹׂ ֳ׃ַ׃םֹ Ýם Êֽֿםֿ ַבÞַֿׁÊ</p>
+      <label><input type="radio" name="q28" value="1"> ױֽ</label>
+      <label><input type="radio" name="q28" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>29. ÊּׁÚ ֳ׃ַָָ ַבÝׁזÞ ַבÝֿׁםֹ בÚַדבםה: ַבÞֹֿׁ זַבßÝֱַֹ</p>
+      <label><input type="radio" name="q29" value="0"> ױֽ</label>
+      <label><input type="radio" name="q29" value="1"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>30. דה ֳוד ַבֳ׃ַבםָ בדַׁÚַֹ ַבÝׁזÞ ַבÝֿׁםֹ: ַבÊהזÚ ַבֽׁßם</p>
+      <label><input type="radio" name="q30" value="1"> ױֽ</label>
+      <label><input type="radio" name="q30" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>31. Êױדםד ַבדֽÊזל םÞזד Úבל Êֽבםב זÊהÙםד ַבדֽÊזל</p>
+      <label><input type="radio" name="q31" value="1"> ױֽ</label>
+      <label><input type="radio" name="q31" value="0"> Ûב״</label>
+    </div>
+
+    <div class="question">
+      <p>32. ַבײָ״ ַבַֿ־בם םÚהם Êֽֿםֿ ַבװׁז״ ַב־ַּׁםֹ</p>
+      <label><input type="radio" name="q32" value="0"> ױֽ</label>
+      <label><input type="radio" name="q32" value="1"> Ûב״</label>
+    </div>
+
+    <button type="button" onclick="calculateResult()">Úׁײ ַבהÊםֹּ</button>
+    <div class="result" id="result"></div>
+    <div class="details" id="details"></div>
+  </form>
+
+  <script>
+    function calculateResult() {
+      const form = document.forms['quizForm'];
+      let total = 32;
+      let score = 0;
+      let results = [];
+      let unanswered = 0;
+
+      // ßֶַה םֽÊזם Úבל ַבֵַַָּÊ ַבױֽםֹֽ בßב ׃ִַב
+      const correctAnswers = {
+        q1: '1', q2: '1', q3: '1', q4: '1', q5: '1',
+        q6: '1', q7: '1', q8: '1', q9: '1', q10: '1',
+        q11: '1', q12: '1', q13: '1', q14: '1', q15: '1',
+        q16: '1', q17: '1', q18: '1', q19: '1', q20: '1',
+        q21: '1', q22: '1', q23: '1', q24: '1', q25: '1',
+        q26: '1', q27: '1', q28: '1', q29: '1', q30: '1',
+        q31: '1', q32: '1'
+      };
+
+      // ֽ׃ַָ ַבהÊםֹּ
+      for (let i = 1; i <= total; i++) {
+        const questionName = `q${i}`;
+        const selectedOption = form.elements[questionName];
+        let selectedValue = null;
+
+        if (selectedOption) {
+          // בבֳ׃ֶבֹ ַבַ־Êםַׁםֹ (radio buttons)
+          if (selectedOption.length) {
+            for (let j = 0; j < selectedOption.length; j++) {
+              if (selectedOption[j].checked) {
+                selectedValue = selectedOption[j].value;
+                break;
+              }
+            }
+          } 
+          // בבֳ׃ֶבֹ ַבֳ־ׁל (ֵ׀ַ ßַה והַß ֳהזַÚ ֳ־ׁל)
+          else if (selectedOption.checked) {
+            selectedValue = selectedOption.value;
+          }
+        }
+
+        if (selectedValue !== null) {
+          if (selectedValue === correctAnswers[questionName]) {
+            score++;
+            results.push({q: i, correct: true, answer: selectedValue});
+          } else {
+            results.push({q: i, correct: false, answer: selectedValue});
+          }
+        } else {
+          unanswered++;
+          results.push({q: i, correct: null, answer: null});
+        }
+      }
+
+      // Úׁײ ַבהÊםֹּ
+      const percentage = ((score / total) * 100).toFixed(1);
+      const resultDiv = document.getElementById('result');
+      const detailsDiv = document.getElementById('details');
+
+      resultDiv.innerHTML = `
+        <h3>ַבהÊםֹּ ַבהוֶַםֹ: ${score} דה ${total}</h3>
+        <p>ַבה׃ָֹ ַבדֶזםֹ: ${percentage}%</p>
+      `;
+
+      // Êבזםה ַבהÊםֹּ ֽ׃ָ ַבֱֳַֿ
+      if (percentage >= 75) {
+        resultDiv.className = 'result passed';
+        resultDiv.innerHTML += '<p>דדÊַׂ! ֱֳַֿ ֶַׁÚ</p>';
+      } else if (percentage >= 50) {
+        resultDiv.className = 'result passed';
+        resultDiv.innerHTML += '<p>ּםֿ¡ בßה םדßהß ַבÊֽ׃םה</p>';
+      } else {
+        resultDiv.className = 'result failed';
+        resultDiv.innerHTML += '<p>םֽÊַּ ֵבל Êֽ׃םה¡ ַֽזב דֹׁ ֳ־ׁל</p>';
+      }
+
+      // Úׁײ ַבÊÝַױםב
+      let detailsHTML = '<h4>ÊÝַױםב ַבֵַַָּÊ:</h4><ul>';
+      
+      results.forEach(item => {
+        detailsHTML += `<li>ַב׃ִַב ${item.q}: `;
+        
+        if (item.correct === null) {
+          detailsHTML += '<span style="color:orange">? בד ÊÊד ַבֵַָֹּ</span>';
+        } else if (item.correct) {
+          detailsHTML += '<span style="color:green">? ֵַָֹּ ױֽםֹֽ</span>';
+        } else {
+          detailsHTML += '<span style="color:red">? ֵַָֹּ ־ַ״ֶֹ</span>';
+        }
+        
+        detailsHTML += ` (ֵַָּÊß: ${item.answer || '--'})</li>`;
+      });
+      
+      detailsHTML += '</ul>';
+      
+      if (unanswered > 0) {
+        detailsHTML += `<p>Úֿֿ ַבֳ׃ֶבֹ Ûםׁ ַבדַָֹּ: ${unanswered}</p>`;
+      }
+      
+      detailsDiv.innerHTML = detailsHTML;
+    }
+  </script>
+
+</body>
+</html>
